@@ -3,3 +3,7 @@
 /__pycache__/
 /inp
 /useful scripts
+
+###
+.env
+testFiles
