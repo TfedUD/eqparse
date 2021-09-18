@@ -31,7 +31,7 @@ class LoadSim:
     "Prop.SIM", "Prop.hsr", "Prop" will all work.
     '''
 
-    def __init__(self, file, hsr=True, inpfile=None):
+    def __init__(self, file, hsr=False, inpfile=None):
         file = file.replace('.SIM', '').replace('.hsr', '')
         self.fname = file.split("\\")[-1].split("/")[-1]
         self.sim = RptHandler(file + '.SIM')
@@ -267,7 +267,7 @@ class LoadSim:
             for r in rptstart:
                 lines = 0
                 scan = f_list[r+3:(r+1000)]
-                while lines is 0:
+                if lines == 0:
                     for num, line in enumerate(scan):
                         rptlen = []
                         if "REPORT" in line:
